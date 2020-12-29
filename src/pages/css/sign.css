@@ -1,0 +1,92 @@
+.bg{
+    background-image: url('../others/ocean.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.msg{
+    position: relative;
+   
+    margin: auto;
+    top: -480px;
+    width: 360px;
+    text-align: center;
+    z-index: 2;
+}
+
+.form{
+    text-align: center;
+    border-radius: 10px;
+    width: 388px;
+    border: rgb(80, 80, 80) 1px solid;
+    position: relative;
+    margin: auto;
+    top: 15.4vh;
+    height: 500px;
+    background-color: white;
+    animation-name: fade-in;
+    animation-duration: 2s;
+    /* background-image: url('./others/wave.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+
+@keyframes fade-in {
+    0%   {top: 1000px;}
+    100% {top: 15.4vh}
+}
+
+.option{
+    border-bottom: solid 1px rgb(80, 80, 80);
+}
+
+.login, .signup{
+    width: 50%;
+    height: 60px;
+    margin: none;
+    border: none;
+    font-size: 24px;
+    background-color: transparent;
+}
+
+.login:focus {
+    outline:0;
+}
+
+.signup:focus {
+    outline:0;
+}
+
+#email{
+    width: 70%;
+    margin: auto;
+    margin-top: 35px;
+}
+
+#password, #confirm{
+    width: 70%;
+    margin: auto;
+    margin-top: 35px;
+
+}
+
+#submit{
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.language{
+    position: absolute; 
+    right: 30px;
+    bottom: 54px;
+}
+
+.back{
+    position: absolute; 
+    left: 50px;
+    
+    bottom: 54px;
+}
