@@ -7,7 +7,7 @@ function ChatPanel({user, handleSend, openOtherCard, language}) {
     user = user.lastUser; 
     if(!user){
         return (
-        <h2 style={{position:'relative', top: '45%', width: '100%',  textAlign: 'center'}}>{Language==='English'?'Click to start':'クリックして開始'}</h2>
+        <h2 style={{position:'relative', top: '45%', width: '100%',  textAlign: 'center'}}>{language==='English'?'Click to start':'クリックして開始'}</h2>
         )
     }
     
