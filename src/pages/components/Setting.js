@@ -3,13 +3,13 @@ import React from 'react';
 import { Button} from 'reactstrap';
 
 
-function Setting({goTo}) {
+function Setting({language, goTo}) {
     return (
-        <div style={{display: 'flex', flexDirection: 'column'}}>
-            <Button onClick={()=>{goTo('Card') }} className='setting-btn'><FaUserCircle size={'28px'}/> <span style={{marginLeft: '20px'}}>My Card</span></Button>
-            <Button onClick={()=>{goTo('Language')}} className='setting-btn'><FaLanguage size={'28px'} /><span style={{marginLeft: '20px'}}>Language</span></Button>
-            <Button onClick={()=>{goTo('Password') }} className='setting-btn'><FaKey size={'28px'}/> <span style={{marginLeft: '20px'}}>Password</span></Button>
-            <Button onClick={()=>{goTo('Background') }} className='setting-btn'><FaImage size={'28px'}/> <span style={{marginLeft: '20px'}}>Background</span></Button>
+        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}}>
+            <Button onClick={()=>{goTo('Card') }} className='setting-btn'><FaUserCircle size={'28px'}/> <span style={{marginLeft: '20px'}}>{language==='English'?'My Card':'私のカード'}</span></Button>
+            <Button onClick={()=>{goTo('Language')}} className='setting-btn'><FaLanguage size={'28px'} /><span style={{marginLeft: '20px'}}>{language==='English'?'Language':'言語'}</span></Button>
+            <Button onClick={()=>{goTo('Password') }} className='setting-btn'><FaKey size={'28px'}/> <span style={{marginLeft: '20px'}}>{language==='English'?'Password':'パスワード'}</span></Button>
+            <Button onClick={()=>{goTo('Background') }} className='setting-btn'><FaImage size={'28px'}/> <span style={{marginLeft: '20px'}}>{language==='English'?'Background':'背景'}</span></Button>
         </div>
     );
 }

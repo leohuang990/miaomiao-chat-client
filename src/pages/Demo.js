@@ -495,10 +495,10 @@ function Demo() {
             }
             
             <Modal isOpen={logoutWindow} toggle={()=>{setLogoutWindow(!logoutWindow)}} style={{position: 'relative', top: '100px'}}>
-                <ModalHeader style={{textAlign: 'center'}} >You want to log out now?</ModalHeader>
+                <ModalHeader style={{textAlign: 'center'}} >You want to leave now?</ModalHeader>
                 
                 <ModalFooter>
-                    <Button color="primary" onClick={()=>{setLogoutWindow(!logoutWindow)}}>Confirm</Button>
+                    <Link to='/sign'><Button color="primary" onClick={()=>{setLogoutWindow(!logoutWindow)}}>Confirm</Button></Link>
                     <Button color="secondary" onClick={()=>{setLogoutWindow(!logoutWindow)}}>Cancel</Button>
                 </ModalFooter>
             </Modal>

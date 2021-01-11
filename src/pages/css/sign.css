@@ -1,5 +1,5 @@
 .bg{
-    background-image: url('../others/ocean.jpg');
+    background-image: url('../others/lake.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,9 +24,11 @@
     margin: auto;
     top: 15.4vh;
     height: 500px;
-    background-color: white;
+    background-color: black;
+    opacity: 0.8;
     animation-name: fade-in;
     animation-duration: 2s;
+    animation-iteration-count: none;
     /* background-image: url('./others/wave.jpg');
     background-position: center;
     background-size: cover;
@@ -65,17 +67,17 @@
     margin-top: 35px;
 }
 
-#password, #confirm{
+#password, #confirm, #name{
     width: 70%;
     margin: auto;
-    margin-top: 35px;
+    margin-top: 22px;
 
 }
 
 #submit{
     width: 30%;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 35px;
 }
 
 .language{

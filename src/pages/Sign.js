@@ -26,7 +26,7 @@ function Sign() {
         } catch (error) {
             return false
         }
-        return false
+        return true
     }
     const [redirect,setRedirect] = useState(verify_token());
     const dispatch = useDispatch();
@@ -58,11 +58,12 @@ function Sign() {
     async function register(){
         const result = await axios({
             method: 'post',
-            url: '/api/users',
+            url: 'https://miaomiao-server.herokuapp.com/api/users',
             data: {
                 confirm: document.getElementById('confirm').value,
                 email: document.getElementById('email').value,
                 password: document.getElementById('password').value,
+                name: document.getElementById('name').value
               }
         });
         const {msg, token} = result.data;
@@ -70,14 +71,15 @@ function Sign() {
             setMsg(language==='English'?msg:Japn(msg))
         } else {
             localStorage.setItem('jwt_token', token)
-            setRedirect(true)
+            // setRedirect(true)
+            window.location.href = '/homepage'
         }
         
     }
     async function login(){
         const result = await axios({
             method: 'post',
-            url: '/api/auth',
+            url: 'https://miaomiao-server.herokuapp.com/api/auth',
             data: {
                 email: document.getElementById('email').value,
                 password: document.getElementById('password').value,
@@ -88,7 +90,8 @@ function Sign() {
             setMsg(language==='English'?msg:Japn(msg))
         } else {
             localStorage.setItem('jwt_token', token)
-            setRedirect(true)
+            window.location.href = '/homepage'
+            // setRedirect(true)
         }
     }
 
@@ -167,18 +170,22 @@ function Sign() {
           >
               
               <Form className='form' autoComplete={'off'} >
+                <Alert color="info"  style={{position: 'absolute', margin: 'auto',  textAlign: 'center', bottom: '2px', left: '5px', background: 'transparent', border: 'none'}}>
+                    You can have a peek at <a href='/demo'>demo</a> before signing up
+                </Alert>
                 <div className='option'>
-                    <button className='login' onClick={(e)=>{e.preventDefault();setState('login')}} style={{color: state==='login'? 'black': '#888'}}>{language==='English'? 'login': 'ログイン'}</button>
-                    <button className='signup' onClick={(e)=>{e.preventDefault();setState('signup')}} style={{color: state==='signup'? 'black': '#888'}}>{language==='English'? 'sign up': 'サインアップ'}</button>
+                    <button className='login' onClick={(e)=>{e.preventDefault();setState('login')}} style={{color: state==='login'? 'rgb(24, 164, 230)': 'white'}}>{language==='English'? 'login': 'ログイン'}</button>
+                    <button className='signup' onClick={(e)=>{e.preventDefault();setState('signup')}} style={{color: state==='signup'? 'rgb(24, 164, 230)': 'white'}}>{language==='English'? 'sign up': 'サインアップ'}</button>
                 </div>
                 {state==='login'? 
                     <FormGroup className='content'>
-                        <Input type="email" name="email" id="email" placeholder={language==='English'? "email address": '電子メールアドレス'} />
-                        <Input type="password" name="password" id="password" placeholder={language==='English'? "password": 'パスワード'} />
+                        <Input type="email" name="email" id="email" style={{marginTop: '35px'}} placeholder={language==='English'? "email address": '電子メールアドレス'} />
+                        <Input type="password" name="password" style={{marginTop: '35px'}} id="password" placeholder={language==='English'? "password": 'パスワード'} />
                         <Button outline color="success" id='submit' onClick={login}>{language==='English'? 'login': 'ログイン'}</Button>
                     </FormGroup> :
                     <FormGroup className='content'>
-                        <Input type="email" name="email" id="email" placeholder={language==='English'? "email address": '電子メールアドレス'} />
+                        <Input type="email" name="email" id="email" placeholder={language==='English'? "email address (can't change)": '電子メールアドレス (変えられません)'} />
+                        <Input type="name" name="name" id="name" placeholder={language==='English'? "username (can't change)": '名前 (変えられません)'} />
                         <Input type="password" name="password" id="password" placeholder={language==='English'? "password": 'パスワード'} />
                         <Input type="password" name="confirm" id="confirm" placeholder={language==='English'? "confrim password": 'パスワード確認'} />
                         <Button id='submit'outline color="success" onClick={register}>{language==='English'? 'register': '登録'}</Button>
