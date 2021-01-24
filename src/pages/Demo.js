@@ -8,14 +8,6 @@ import { InputGroup, InputGroupAddon, InputGroupText, Input, Button, Modal,  Mod
 import {cover_sign_language} from '../actions'
 import axios from 'axios'
 
-import road from './homepage-bg/road.jpg'
-import sakura from './homepage-bg/sakura.jpg'
-import sea from './homepage-bg/sea.jpg'
-import city from './homepage-bg/city.jpg'
-import forest from './homepage-bg/forest.jpg'
-import prairie from './homepage-bg/prairie.jpg'
-import bridge from './homepage-bg/bridge.jpg'
-import aurora from './homepage-bg/aurora.jpg'
 function Demo() {
     const [active, setActive] = useState('chat');
     const [width, setWidth] = useState(window.innerWidth);
@@ -144,21 +136,21 @@ function Demo() {
     function hashBg(photo){
         switch(photo){
             case'Aurora':
-                return aurora
+                return 'https://images.pexels.com/photos/375732/pexels-photo-375732.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
             case'Bridge':
-                return bridge
+                return 'https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
             case'City':
-                return city
+                return 'https://images.pexels.com/photos/37646/new-york-skyline-new-york-city-city-37646.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
             case'Forest':
-                return forest
+                return 'https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
             case'Prairie':
-                return prairie
+                return 'https://images.pexels.com/photos/464321/pexels-photo-464321.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
             case'Road':
-                return road
+                return 'https://images.pexels.com/photos/681335/pexels-photo-681335.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
             case'Sakura':
-                return sakura
+                return 'https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
             case'Sea':
-                return sea
+                return 'https://images.pexels.com/photos/164041/pexels-photo-164041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
             default: 
         }
     }
